@@ -4,7 +4,7 @@ Los principios SOLID son un conjunto de principios de diseño que buscan que los
 comprensibles, flexibles y fáciles de mantener. Estos principios, introducidos por Robert C. Martin, son ampliamente
 reconocidos como la base de un buen diseño y programación orientados a objetos. El acrónimo SOLID significa:
 
-- [Principio de responsabilidad **única**](https://github.com/bryamjesus/hello-java/blob/main/src/main/java/org/bjtg/solid/a_s/single-responsability.md)
+- [Principio de responsabilidad **única**](https://github.com/bryamjesus/hello-java/blob/main/src/main/java/org/bjtg/solid/single_responsability/single-responsability.md)
 - [Principio **abierto/cerrado**]()
 - [Principio de sustitución de **L' iskov**]()
 - [Principio de segregación de **interfaz**]()
