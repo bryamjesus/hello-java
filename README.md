@@ -1,2 +1,1 @@
-# hello-java
-Learn Java
+# HELLO-JAVA
