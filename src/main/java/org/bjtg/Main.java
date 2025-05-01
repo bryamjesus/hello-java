@@ -6,10 +6,10 @@ import org.bjtg.solid.single_responsability.srp.UserSRP;
 
 public class Main {
     public static void main(String[] args) {
-        solidPrincipal();
+        solidPrinciples();
     }
 
-    private static void solidPrincipal() {
+    private static void solidPrinciples() {
         /**********************************************
          Single Responsibility Principle
          **********************************************/
