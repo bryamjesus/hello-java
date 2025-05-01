@@ -7,14 +7,15 @@ Una clase debe tener solo una razón para cambiar, lo que significa que debe ten
 ## **Antes de SRP:**
 
 Considere una`User`clase que maneja datos de usuario y también administra el almacenamiento de archivos.
-[Ejemplo](no_srp/User.java)
+
+[UserNoSRP](no_srp/User.java)
 
 ```java
-public class User {
+public class UserNoSRP {
     private String name;
     private String email;
 
-    public User(String name, String email) {
+    public UserNoSRP(String name, String email) {
         this.name = name;
         this.email = email;
     }
@@ -37,11 +38,6 @@ public class User {
             e.printStackTrace();
         }
     }
-
-    public static void main(String[] args) {
-        User user = new User("John Doe", "john.doe@example.com");
-        user.saveToFile();
-    }
 }
 ```
 
@@ -62,13 +58,14 @@ modificaciones en la`User`clase.
 
 Para adherirnos al SRP, deberíamos separar estas responsabilidades en diferentes clases.
 
+[UserSRP](srp/UserSRP.java)
+
 ```java
-// User.java
-public class User {
+public class UserSRP {
     private String name;
     private String email;
 
-    public User(String name, String email) {
+    public UserSRP(String name, String email) {
         this.name = name;
         this.email = email;
     }
@@ -81,29 +78,23 @@ public class User {
         return email;
     }
 }
+```
 
-// UserFileManager.java
+[UserSRP](srp/UserFileManager.java)
+
+```java
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class UserFileManager {
-    public void saveToFile(User user) {
-        try (FileWriter fileWriter = new FileWriter(user.getName() + ".txt")) {
-            fileWriter.write("Name: " + user.getName() + "\n");
-            fileWriter.write("Email: " + user.getEmail() + "\n");
+    public void saveToFile(UserSRP userSRP) {
+        try (FileWriter fileWriter = new FileWriter(userSRP.getName() + ".txt")) {
+            fileWriter.write("Name: " + userSRP.getName() + "\n");
+            fileWriter.write("Email: " + userSRP.getEmail() + "\n");
             System.out.println("User data saved to file successfully.");
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-}
-
-// Main.java
-public class Main {
-    public static void main(String[] args) {
-        User user = new User("John Doe", "john.doe@example.com");
-        UserFileManager fileManager = new UserFileManager();
-        fileManager.saveToFile(user);
     }
 }
 ```
