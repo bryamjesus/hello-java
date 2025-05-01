@@ -3,11 +3,11 @@ package org.bjtg.solid.single_responsability.no_srp;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class User {
+public class UserNoSRP {
     private String name;
     private String email;
 
-    public User(String name, String email) {
+    public UserNoSRP(String name, String email) {
         this.name = name;
         this.email = email;
     }
