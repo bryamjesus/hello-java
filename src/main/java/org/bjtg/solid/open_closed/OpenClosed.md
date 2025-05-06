@@ -88,3 +88,32 @@ public class DiscountCalculatorOC {
 }
 ```
 
+Main.java
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        Discount regularDiscount = new RegularDiscount();
+        Discount premiumDiscount = new PremiumDiscount();
+
+        DiscountCalculator calculator = new DiscountCalculator();
+
+        double regularDiscountAmount = calculator.calculateDiscount(regularDiscount, 100);
+        double premiumDiscountAmount = calculator.calculateDiscount(premiumDiscount, 100);
+
+        System.out.println("Regular Discount: " + regularDiscountAmount);
+        System.out.println("Premium Discount: " + premiumDiscountAmount);
+    }
+}
+```
+
+**Producción:**
+
+```bash
+Regular Discount: 10.0
+Premium Discount: 20.0
+```
+
+**Explicación:**La`DiscountCalculator`clase ahora depende de la`Discount`interfaz, lo que permite añadir nuevos tipos de
+descuento sin modificar el código existente. Esto cumple con el principio de apertura/cierre.
+
