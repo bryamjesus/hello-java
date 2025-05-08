@@ -1,0 +1,1 @@
+# Liskov Substitution Principle og Principio de sustitución de Liskov
