@@ -1,5 +1,6 @@
 package org.bjtg;
 
+import org.bjtg.poo.POO;
 import org.bjtg.solid.open_closed.no_oc.DiscountCalculatorNoOC;
 import org.bjtg.solid.open_closed.oc.Discount;
 import org.bjtg.solid.open_closed.oc.DiscountCalculatorOC;
@@ -12,11 +13,13 @@ import org.bjtg.solid.single_responsability.srp.UserSRP;
 public class Main {
     public static void main(String[] args) {
         solidPrinciples();
+
+        POO.principles();
     }
 
     private static void solidPrinciples() {
         // singleResponsabilityPrinciple();
-        openClosedPrinciple();
+        // openClosedPrinciple();
     }
 
     private static void singleResponsabilityPrinciple() {
